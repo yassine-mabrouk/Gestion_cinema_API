@@ -18,6 +18,4 @@ public class Seance {
     @Temporal(TemporalType.TIME)
     private Date heureDebut;
 
-
-
 }

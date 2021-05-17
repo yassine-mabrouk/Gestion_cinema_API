@@ -109,12 +109,12 @@ public class CinemaServiceimpli  implements ICinemaService{
     public void initFilms() {
         double [] duree =new double[]{1,1.5,2.5,3};
         List<Categorie> listCat=categorieRepo.findAll();
-        Stream.of("The Pursuit of Happyness","Viking","Brandren","le parin")
+        Stream.of("The Pursuit of Happyness","viking","iboy","snowden")
                 .forEach(filmName->{
          Film film=new Film();
          film.setTitre(filmName);
          film.setDuree(duree[new Random().nextInt(duree.length)]);
-         film.setPhoto(filmName.replaceAll(" ",""));
+         film.setPhoto(filmName.replaceAll(" ","")+".jpg");
          film.setCategorie(listCat.get(new Random().nextInt(listCat.size())));
          filmRepo.save(film);
         });

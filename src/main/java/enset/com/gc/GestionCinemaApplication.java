@@ -11,11 +11,13 @@ public class GestionCinemaApplication implements CommandLineRunner {
    @Autowired
     ICinemaService cinemaInit;
     public static void main(String[] args) {
+
         SpringApplication.run(GestionCinemaApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
+
         cinemaInit.initVilles();
         cinemaInit.initCinema();
         cinemaInit.initSalles();
