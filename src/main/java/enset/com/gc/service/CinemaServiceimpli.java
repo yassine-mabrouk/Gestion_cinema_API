@@ -16,7 +16,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 @Service
-@Transactional
+@Transactional // tout les methodes sont transactional
 public class CinemaServiceimpli  implements ICinemaService{
    @Autowired
     private VilleRepo villeRepo;

@@ -51,10 +51,10 @@ public class CinemaRestController {
     @PostMapping("/payerTickets")
     @Transactional
     public List<Ticket> payerTicks(@RequestBody TicketForm ticketForm){
-     List<Ticket> listTikets=new ArrayList<>();
-    ticketForm.getTickets().forEach(id->{
-        System.out.println(id);
-           Ticket ticket =ticketRepo.findById(id).get();
+       List<Ticket> listTikets=new ArrayList<>();
+           ticketForm.getTickets().forEach(idTiket->{
+           System.out.println(idTiket);
+           Ticket ticket =ticketRepo.findById(idTiket).get();
            ticket.setNomClient(ticketForm.getNameClient());
            ticket.setCodePayemet(ticketForm.getCodePayemnt());
            ticket.setReserve(true);
@@ -63,14 +63,12 @@ public class CinemaRestController {
        });
     return listTikets;
     }
-
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    class TicketForm {
+}
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class TicketForm {
     private  String nameClient;
     private List<Long> tickets =new ArrayList<>();
     private Integer codePayemnt;
-    }
-
 }

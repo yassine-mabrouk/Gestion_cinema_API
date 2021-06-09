@@ -21,6 +21,5 @@ public class Categorie {
     private String name ;
     @OneToMany(mappedBy = "categorie")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-
     private Collection<Film> films;
 }
