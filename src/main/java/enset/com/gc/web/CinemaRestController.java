@@ -32,9 +32,13 @@ public class CinemaRestController {
     @Autowired
     VilleRepo villeRepo;
 
-    @GetMapping("/getVille")
-    public  List<Ville> getAllVile (){
+    @GetMapping("/getVilles")
+    public  List<Ville> getAllViles (){
         return villeRepo.findAll();
+    }
+    @GetMapping("/getVille")
+    public  Ville getAllVile (Long id){
+        return villeRepo.findById(id).get();
     }
 
     @GetMapping("/getAllFilm")
