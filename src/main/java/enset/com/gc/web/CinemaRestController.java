@@ -2,8 +2,10 @@ package enset.com.gc.web;
 
 import enset.com.gc.dao.FilmRepo;
 import enset.com.gc.dao.TicketRepo;
+import enset.com.gc.dao.VilleRepo;
 import enset.com.gc.entities.Film;
 import enset.com.gc.entities.Ticket;
+import enset.com.gc.entities.Ville;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,6 +29,13 @@ public class CinemaRestController {
     FilmRepo filmRepo;
     @Autowired
     TicketRepo ticketRepo;
+    @Autowired
+    VilleRepo villeRepo;
+
+    @GetMapping("/getVille")
+    public  List<Ville> getAllVile (){
+        return villeRepo.findAll();
+    }
 
     @GetMapping("/getAllFilm")
     public List<Film> getAlFilm(){
