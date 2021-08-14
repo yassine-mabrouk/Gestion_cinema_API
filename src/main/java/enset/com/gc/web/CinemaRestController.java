@@ -70,6 +70,7 @@ public class CinemaRestController {
            ticket.setReserve(true);
            ticketRepo.save(ticket);
            listTikets.add(ticket);
+               System.out.println("tiket");
        });
     return listTikets;
     }
